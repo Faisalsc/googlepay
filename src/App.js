@@ -25,15 +25,15 @@ const allowedAuthMethods = ['PAN_ONLY','CRYPTOGRAM_3DS'];
               tokenizationSpecification: {
                 type: 'PAYMENT_GATEWAY',
                 parameters: {
-                  gateway: 'example',
-                  gatewayMerchantId: 'exampleGatewayMerchantId',
+                  gateway: 'allpayments',
+                  gatewayMerchantId: 'BCR2DN6TSPJ7XKYY',
                 },
               },
             },
           ],
           merchantInfo: {
             merchantId: 'BCR2DN6TSPJ7XKYY',
-            merchantName: 'Demo Merchant',
+            merchantName: 'Nashat Enterprises',
           },
           transactionInfo: {
             totalPriceStatus: 'FINAL',
