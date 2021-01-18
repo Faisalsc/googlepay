@@ -9,7 +9,7 @@ function App() {
     {
       supportedMethods: ['https://tez.google.com/pay'],
       data: {
-        pa: '8678912996@apl',
+        pa: '8678912996@ybl',
         pn: 'Nashat Enterprises',
         tr: '1234ABCD',  // your custom transaction reference ID
         url: 'http://url/of/the/order/in/your/website',
