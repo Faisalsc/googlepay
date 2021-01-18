@@ -121,10 +121,20 @@ function App() {
   * @private
   * @param {PaymentResponse} instrument The payment instrument that was authed.
   */
+ function instrumentToJsonString(instrument) {
+  if (instrument.toJSON) {
+    return JSON.stringify(instrument, undefined, 2);
+  } else {
+    return JSON.stringify({
+      methodName: instrument.methodName,
+      details: instrument.details,
+    }, undefined, 2);
+  }
+}
   function processResponse(instrument) {
-    // var instrumentString = instrumentToJsonString(instrument);
-    // console.log(instrumentString);
-    console.log(instrument);
+    var instrumentString = instrumentToJsonString(instrument);
+    console.log(instrumentString);
+    // console.log(instrument);
 
     fetch('/buy', {
       method: 'POST',
