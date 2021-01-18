@@ -9,9 +9,9 @@ function App() {
     {
       supportedMethods: ['https://tez.google.com/pay'],
       data: {
-        pa: '8678912996@ybl',
+        pa: '8678912996@apl',
         pn: 'Nashat Enterprises',
-        tr: '1234ABCD',  // your custom transaction reference ID
+        tr: '4444ABCF',  // your custom transaction reference ID
         url: 'https://www.alameenindia.com',
         mc: '5111', // your merchant category code
         tn: 'Purchase in Merchant',
