@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/googlepay/static/css/main.ab7136cd.chunk.css",
-    "main.js": "/googlepay/static/js/main.0d54bbe2.chunk.js",
-    "main.js.map": "/googlepay/static/js/main.0d54bbe2.chunk.js.map",
+    "main.js": "/googlepay/static/js/main.993adb8f.chunk.js",
+    "main.js.map": "/googlepay/static/js/main.993adb8f.chunk.js.map",
     "runtime-main.js": "/googlepay/static/js/runtime-main.f1fb792c.js",
     "runtime-main.js.map": "/googlepay/static/js/runtime-main.f1fb792c.js.map",
-    "static/js/2.d3885691.chunk.js": "/googlepay/static/js/2.d3885691.chunk.js",
-    "static/js/2.d3885691.chunk.js.map": "/googlepay/static/js/2.d3885691.chunk.js.map",
+    "static/js/2.139f693e.chunk.js": "/googlepay/static/js/2.139f693e.chunk.js",
+    "static/js/2.139f693e.chunk.js.map": "/googlepay/static/js/2.139f693e.chunk.js.map",
     "static/js/3.442b2889.chunk.js": "/googlepay/static/js/3.442b2889.chunk.js",
     "static/js/3.442b2889.chunk.js.map": "/googlepay/static/js/3.442b2889.chunk.js.map",
     "index.html": "/googlepay/index.html",
     "static/css/main.ab7136cd.chunk.css.map": "/googlepay/static/css/main.ab7136cd.chunk.css.map",
-    "static/js/2.d3885691.chunk.js.LICENSE.txt": "/googlepay/static/js/2.d3885691.chunk.js.LICENSE.txt",
+    "static/js/2.139f693e.chunk.js.LICENSE.txt": "/googlepay/static/js/2.139f693e.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/googlepay/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f1fb792c.js",
-    "static/js/2.d3885691.chunk.js",
+    "static/js/2.139f693e.chunk.js",
     "static/css/main.ab7136cd.chunk.css",
-    "static/js/main.0d54bbe2.chunk.js"
+    "static/js/main.993adb8f.chunk.js"
   ]
 }
