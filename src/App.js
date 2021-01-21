@@ -11,7 +11,7 @@ function App() {
       data: {
         pa: '8678912996@apl',
         pn: 'Nashat Enterprises',
-        tr: '4444ABCF',  // your custom transaction reference ID
+        tr: 'AXI1234567890',  // your custom transaction reference ID
         url: 'https://www.alameenindia.com',
         mc: '5111', // your merchant category code
         tn: 'Purchase in Merchant',
