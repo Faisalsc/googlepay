@@ -9,12 +9,12 @@ function App() {
     {
       supportedMethods: ['https://tez.google.com/pay'],
       data: {
-        pa: '8678912996@apl',
+        pa: 'a.mohammedfaisal395-2@oksbi',
         pn: 'Nashat Enterprises',
         tr: '1234ABCD',  // your custom transaction reference ID
         url: 'https://www.google.com',
-        mc: 'BCR2DN6TSPL65RI3', // your merchant category code
-        // mc: '5111', // your merchant category code
+        // mc: 'BCR2DN6TSPL65RI3', // your merchant category code
+        mc: '5111', // your merchant category code
         tn: 'Purchase in Merchant',
       },
     }
