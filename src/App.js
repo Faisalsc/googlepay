@@ -11,7 +11,7 @@ function App() {
       data: {
         pa: 'a.mohammedfaisal395-2@oksbi',
         pn: 'Nashat Enterprises',
-        tr: '1234ABCD',  // your custom transaction reference ID
+        tr: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(4,2),  // your custom transaction reference ID
         url: 'https://www.google.com',
         // mc: 'BCR2DN6TSPL65RI3', // your merchant category code
         mc: '5111', // your merchant category code
