@@ -9,10 +9,10 @@ function App() {
     {
       supportedMethods: ['https://tez.google.com/pay'],
       data: {
-        pa: 'BCR2DN6TSPL65RI3-8678912996@apl',
+        pa: '8678912996@apl',
         pn: 'Nashat Enterprises',
-        tr: 'BCR2DN6TSPL65RI2',  // your custom transaction reference ID
-        url: 'https://www.alameenindia.com',
+        tr: '1234ABCD',  // your custom transaction reference ID
+        url: 'https://www.google.com',
         mc: '5111', // your merchant category code
         tn: 'Purchase in Merchant',
       },
@@ -23,14 +23,14 @@ function App() {
       label: 'Total',
       amount: {
         currency: 'INR',
-        value: '10.01', // sample amount
+        value: '1.01', // sample amount
       },
     },
     displayItems: [{
       label: 'Original Amount',
       amount: {
         currency: 'INR',
-        value: '10.01',
+        value: '1.01',
       },
     }],
   };
