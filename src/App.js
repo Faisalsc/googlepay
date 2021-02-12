@@ -9,7 +9,7 @@ function App() {
     {
       supportedMethods: ['https://tez.google.com/pay'],
       data: {
-        pa: 'a.mohammedfaisal395-2@oksbi',
+        pa: '8681821208@okbizaxis',
         pn: 'Nashat Enterprises',
         tr: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(4,2),  // your custom transaction reference ID
         url: 'https://www.google.com',
