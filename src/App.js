@@ -11,7 +11,7 @@ function App() {
       data: {
         pa: '8681821208@okbizaxis',
         pn: 'Nashat Enterprises',
-        tr: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(4,2),  // your custom transaction reference ID
+        tr: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(4, 2),  // your custom transaction reference ID
         url: 'https://www.google.com',
         // mc: 'BCR2DN6TSPL65RI3', // your merchant category code
         mc: '5111', // your merchant category code
@@ -122,16 +122,16 @@ function App() {
   * @private
   * @param {PaymentResponse} instrument The payment instrument that was authed.
   */
- function instrumentToJsonString(instrument) {
-  if (instrument.toJSON) {
-    return JSON.stringify(instrument, undefined, 2);
-  } else {
-    return JSON.stringify({
-      methodName: instrument.methodName,
-      details: instrument.details,
-    }, undefined, 2);
+  function instrumentToJsonString(instrument) {
+    if (instrument.toJSON) {
+      return JSON.stringify(instrument, undefined, 2);
+    } else {
+      return JSON.stringify({
+        methodName: instrument.methodName,
+        details: instrument.details,
+      }, undefined, 2);
+    }
   }
-}
   function processResponse(instrument) {
     var instrumentString = instrumentToJsonString(instrument);
     console.log(instrumentString);
@@ -170,7 +170,7 @@ function App() {
     instrument.complete(result)
       .then(function () {
         console.log('Payment succeeds.');
-        console.log(msg);
+        alert(msg);
       })
       .catch(function (err) {
         console.log(err);
