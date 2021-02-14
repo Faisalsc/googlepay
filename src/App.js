@@ -110,7 +110,8 @@ function App() {
       .then(function (instrument) {
 
         window.clearTimeout(paymentTimeout);
-        processResponse(instrument); // Handle response from browser.
+        const pRes = processResponse(instrument); // Handle response from browser.
+        alert(pRes);
       })
       .catch(function (err) {
         console.log(err);
