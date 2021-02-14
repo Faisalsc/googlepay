@@ -38,6 +38,7 @@ function App() {
   let request = null;
   try {
     request = new PaymentRequest(supportedInstruments, details);
+    alert(request)
   } catch (e) {
     console.log('Payment Request Error: ' + e.message);
     return;
