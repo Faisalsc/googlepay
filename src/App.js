@@ -137,8 +137,7 @@ function App() {
   function processResponse(instrument) {
     var instrumentString = instrumentToJsonString(instrument);
     console.log(instrumentString);
-    // console.log(instrument);
-
+    alert(instrumentString);    // console.log(instrument);
     fetch('/buy', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -172,7 +171,6 @@ function App() {
     instrument.complete(result)
       .then(function () {
         console.log('Payment succeeds.');
-        alert(msg);
       })
       .catch(function (err) {
         console.log(err);
