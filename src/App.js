@@ -108,7 +108,7 @@ function App() {
       .then(function (instrument) {
         window.clearTimeout(paymentTimeout);
         const pRes = processResponse(instrument); // Handle response from browser.
-        alert(pRes);
+        alert("line number 111" + pRes);
       })
       .catch(function (err) {
         console.log(err);
@@ -134,7 +134,7 @@ function App() {
   function processResponse(instrument) {
     var instrumentString = instrumentToJsonString(instrument);
     console.log(instrumentString);
-    alert(instrumentString);    // console.log(instrument);
+    alert("137" + instrumentString);    // console.log(instrument);
     request = new PaymentRequest(supportedInstruments, details);
     request.abort()
       .then(function () {
