@@ -102,23 +102,22 @@ function App() {
         .catch(function () {
           console.log('Unable to abort, user is in the process of paying.');
         });
-    }, 20 * 60 * 1000); /* 20 minutes */
+    }, 60000); /* 1 minutes */
 
     request.show()
       .then(function (instrument) {
         window.clearTimeout(paymentTimeout);
         processResponse(instrument); // Handle response from browser.
-        request = new PaymentRequest(supportedInstruments, details);
-        request.abort()
-          .then(function () {
-            console.log('Payment timed out after 20 minutes.');
-          })
-          .catch(function () {
-            console.log('Unable to abort, user is in the process of paying.');
-          });
       })
       .catch(function (err) {
         console.log(err);
+      });
+    request.abort()
+      .then(function () {
+        console.log('Payment timed out after 20 minutes.');
+      })
+      .catch(function () {
+        console.log('Unable to abort, user is in the process of paying.');
       });
   }
 
