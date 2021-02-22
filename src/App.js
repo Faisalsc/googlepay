@@ -46,7 +46,6 @@ function App() {
     console.log('Web payments are not supported in this browser.');
     return;
   }
-  // Global key for canMakepayment cache.
   const canMakePaymentCache = 'canMakePaymentCache';
 
   /**
@@ -107,7 +106,6 @@ function App() {
 
     request.show()
       .then(function (instrument) {
-
         window.clearTimeout(paymentTimeout);
         const pRes = processResponse(instrument); // Handle response from browser.
         alert(pRes);
@@ -155,6 +153,14 @@ function App() {
       .catch(function (err) {
         console.log('Unable to process payment. ' + err);
       });
+    request = new PaymentRequest(supportedInstruments, details);
+    request.abort()
+      .then(function () {
+        console.log('Payment timed out after 20 minutes.');
+      })
+      .catch(function () {
+        console.log('Unable to abort, user is in the process of paying.');
+      });
   }
 
   /**
@@ -188,61 +194,6 @@ function App() {
   return (
     <div className="App">
       <h1>google pay integration</h1>
-
-      {/* <GooglePayButton
-        environment="TEST"
-        paymentRequest={{
-          apiVersion: 2,
-          apiVersionMinor: 0,
-          allowedPaymentMethods: [
-            {
-              type: 'CARD',
-              parameters: {
-                allowedCardNetworks: allowedNetworks,
-                allowedAuthMethods: allowedAuthMethods,
-                // allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-                // allowedCardNetworks: ['MASTERCARD', 'VISA'],
-              },
-              tokenizationSpecification: {
-                type: 'PAYMENT_GATEWAY',
-                parameters: {
-                  gateway: 'allpayments',
-                  gatewayMerchantId: 'BCR2DN6TSPJ7XKYY',
-                },
-              },
-            },
-          ],
-          merchantInfo: {
-            merchantId: 'BCR2DN6TSPJ7XKYY',
-            merchantName: 'Nashat Enterprises',
-          },
-          transactionInfo: {
-            totalPriceStatus: 'FINAL',
-            totalPriceLabel: 'Total',
-            totalPrice: '1',
-            currencyCode: 'USD',
-            countryCode: 'US',
-          },
-          shippingAddressRequired: true,
-          callbackIntents: ['SHIPPING_ADDRESS', 'PAYMENT_AUTHORIZATION'],
-        }}
-        onLoadPaymentData={paymentRequest => {
-          console.log('Success', paymentRequest);
-        }}
-        onPaymentAuthorized={paymentData => {
-          console.log('Payment Authorised Success', paymentData)
-          return { transactionState: 'SUCCESS' }
-        }
-        }
-        onPaymentDataChanged={paymentData => {
-          console.log('On Payment Data Changed', paymentData)
-          return {}
-        }
-        }
-        existingPaymentMethodRequired='false'
-        buttonColor='black'
-        buttonType='Buy'
-      /> */}
     </div>
   );
 }
