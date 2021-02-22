@@ -107,8 +107,15 @@ function App() {
     request.show()
       .then(function (instrument) {
         window.clearTimeout(paymentTimeout);
-        const pRes = processResponse(instrument); // Handle response from browser.
-        alert("line number 111" + pRes);
+        processResponse(instrument); // Handle response from browser.
+        request = new PaymentRequest(supportedInstruments, details);
+        request.abort()
+          .then(function () {
+            console.log('Payment timed out after 20 minutes.');
+          })
+          .catch(function () {
+            console.log('Unable to abort, user is in the process of paying.');
+          });
       })
       .catch(function (err) {
         console.log(err);
@@ -135,14 +142,6 @@ function App() {
     var instrumentString = instrumentToJsonString(instrument);
     console.log(instrumentString);
     alert("137" + instrumentString);    // console.log(instrument);
-    request = new PaymentRequest(supportedInstruments, details);
-    request.abort()
-      .then(function () {
-        console.log('Payment timed out after 20 minutes.');
-      })
-      .catch(function () {
-        console.log('Unable to abort, user is in the process of paying.');
-      });
     fetch('/buy', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
