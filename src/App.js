@@ -135,6 +135,14 @@ function App() {
     var instrumentString = instrumentToJsonString(instrument);
     console.log(instrumentString);
     alert(instrumentString);    // console.log(instrument);
+    request = new PaymentRequest(supportedInstruments, details);
+    request.abort()
+      .then(function () {
+        console.log('Payment timed out after 20 minutes.');
+      })
+      .catch(function () {
+        console.log('Unable to abort, user is in the process of paying.');
+      });
     fetch('/buy', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -152,14 +160,6 @@ function App() {
       })
       .catch(function (err) {
         console.log('Unable to process payment. ' + err);
-      });
-    request = new PaymentRequest(supportedInstruments, details);
-    request.abort()
-      .then(function () {
-        console.log('Payment timed out after 20 minutes.');
-      })
-      .catch(function () {
-        console.log('Unable to abort, user is in the process of paying.');
       });
   }
 
